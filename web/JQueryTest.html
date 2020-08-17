@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用JQuery框架</title>
+    <script src="/JS/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="001a">dov001a</div>
+    <div id="001b">dov001b</div>
+    <input type="button" value="按钮" id="bt1">
+    <script>
+/*        // 明明是正确的但是不展示，虽然没有变色，但是这是正确的
+        // 使用Jquery根据id获得对象
+        var obj=$("#001a");
+        alert(obj.html());*/
+/*        // 通过js方式获得名称为div的所有html元素
+        var divs=document.getElementsByName("div");
+        // 获得的对象可以当做数组使用
+        alert(divs.length);
+        // 遍历，将所有内容变成aaa
+        for(var i=0;i<divs.length;i++){
+            // js方式实现
+            divs[i].innerHTML="aaa";
+            // js转化为jq方式实现
+            $(divs[i]).html("CCC");
+        }
+
+        // 使用jq方式获得名为div的所有元素
+        var $divs=$("div");
+        // 获得的对象也可以当做数组使用
+        alert($divs.length)
+// jq转化诶js方式实现
+$divs[0].innerHTML="bbb";
+$divs.get(1).innerHTML="bbb";
+// 遍历，将所有内容变成bbb,使用jq方式
+        $divs.html("bbb");*/
+// 事件绑定,若果写到上面去，对象创建之前可以使用window.onload
+        // jq方式实现同样效果
+        $(function () {
+            $("#bt1").click(function () {
+                alert("abc");
+            });
+            $("#001a").css("backgroundColor","red");
+        })
+
+    </script>
+</body>
+</html>
